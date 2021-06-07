@@ -31,8 +31,6 @@ public:
     void hello();
 };
 
-// Implementations
-
-#include "../src/String2.cpp"
+#include "String2.cpp"
 
 #endif // __STRING2_H__

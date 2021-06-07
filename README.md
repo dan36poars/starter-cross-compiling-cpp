@@ -4,6 +4,7 @@
 ### the toolchain is used by cmake to compile window programs using x86_64-w64-mingw32 compiler.
 <br>
 
+
 ## Build-System with CMake for linux
 
 Can Config the build-system by CMake-Gui or CMake command-line. The ninja can help you to generate the config too.
@@ -19,9 +20,13 @@ Build:
     
     cmake --build ./build/
 
-run:
+Run:
     
     ./build/<name-your-program>
+
+<br>
+
+><br><h3><b><h3>Important</h3></b>The Compile Settings to windows. In CMakeLists.txt top-level(0) uncomments the Set and target_link_libraries commands that specify dependencies for windows compiler. And make sure that the include/CMakelist.txt file specifies STATIC parameter for the target library. consider this only windows compilation</h3><br>
 
 <br>
 

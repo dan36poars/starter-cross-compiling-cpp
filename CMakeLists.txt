@@ -1,36 +1,33 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.0.0)
 
-project(
-    multiFiles
-    VERSION 1.0.0
-    DESCRIPTION "linking multi-files to a project"
-    LANGUAGES CXX
-)
+project(wx)
 
-set( CMAKE_CXX_STANDARD 14 )
-set( CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(CMAKE_CXX_STANDARD 11)
+set(CXX_STANDARD_REQUIRED TRUE)
 
-set(CMAKE_EXE_LINKER_FLAGS " -static")
+# STATIC linker for windows
+# set(CMAKE_EXE_LINKER_FLAGS " -static")
 
-# include the *.cpp files
-add_executable(
-    app main.cpp
-    src/Vector.cpp
+add_subdirectory(include)
+
+add_executable( 
+    ${PROJECT_NAME}
+    main.cpp
 )
 
 target_compile_features(
-    app PRIVATE cxx_std_11
+    ${PROJECT_NAME} PRIVATE cxx_std_11
 )
 
 target_link_libraries(
-    app PRIVATE
-    -static-libgcc
-    -static-libstdc++
+    ${PROJECT_NAME} PRIVATE Include
+    # uncomment below commmands to compile FOR WINDOWS
+    # PRIVATE -static-libgcc
+    # PRIVATE -static-libstdc++
 )
 
-# includes the header files
-# template classes added only you folder
-target_include_directories(
-    app PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
+# target_include_directories(
+#     ${PROJECT_NAME} PRIVATE
+#     "${PROJECT_BINARY_DIR}"
+#     "${PROJECT_SOURCE_DIR}/include"
+# )
