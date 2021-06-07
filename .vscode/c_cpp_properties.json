@@ -4,9 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${vcpkgRoot}/x64-linux/include",
-                "/home/daniel/wx/wxWidgets/gtk-build/lib/wx/include/gtk3-unicode-3.1",
-                "/usr/local/include/wx-3.1/"
+                "${vcpkgRoot}/x64-linux/include"            
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
